@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="Sebastian" created="October 30, 2017 4:57:59 PM EDT" modified="November 3, 2017 3:26:43 PM EDT" specVersion="204" urnVersion="1.27" nextGlobalID="21452">
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="Sebastian" created="October 30, 2017 4:57:59 PM EDT" modified="November 3, 2017 4:26:15 PM EDT" specVersion="210" urnVersion="1.27" nextGlobalID="21517">
   <ucmspec>
     <scenarioGroups name="Car Rental Sytem in Action - Scenario Options" id="7">
       <scenarios name="In Person - All Clear" id="21025">
@@ -15,6 +15,44 @@
         <initializations value="false" variable="21151"/>
         <initializations value="false" variable="21423"/>
         <initializations value="false" variable="21428"/>
+        <startPoints enabled="true" startPoint="754"/>
+      </scenarios>
+      <scenarios name="Online - All Clear" id="21456">
+        <initializations value="false" variable="21024"/>
+        <initializations value="true" variable="21065"/>
+        <initializations value="true" variable="21119"/>
+        <initializations value="true" variable="21132"/>
+        <initializations value="false" variable="21133"/>
+        <initializations value="false" variable="21212"/>
+        <initializations value="false" variable="21215"/>
+        <initializations value="true" variable="21137"/>
+        <initializations value="false" variable="21363"/>
+        <initializations value="false" variable="21151"/>
+        <initializations value="false" variable="21423"/>
+        <initializations value="true" variable="21428"/>
+        <initializations value="true" variable="21170"/>
+        <initializations value="true" variable="21461"/>
+        <initializations value="false" variable="21484"/>
+        <startPoints enabled="true" startPoint="754"/>
+      </scenarios>
+      <scenarios name="Online - Card Rejected" id="21487">
+        <initializations value="false" variable="21024"/>
+        <initializations value="true" variable="21065"/>
+        <initializations value="true" variable="21119"/>
+        <initializations value="true" variable="21132"/>
+        <initializations value="false" variable="21133"/>
+        <initializations value="false" variable="21212"/>
+        <initializations value="false" variable="21215"/>
+        <initializations value="true" variable="21137"/>
+        <initializations value="false" variable="21363"/>
+        <initializations value="false" variable="21151"/>
+        <initializations value="false" variable="21423"/>
+        <initializations value="true" variable="21428"/>
+        <initializations value="true" variable="21170"/>
+        <initializations value="false" variable="21461"/>
+        <initializations value="false" variable="21484"/>
+        <initializations value="true" variable="21189"/>
+        <initializations value="false" variable="21510"/>
         <startPoints enabled="true" startPoint="754"/>
       </scenarios>
     </scenarioGroups>
@@ -35,31 +73,34 @@
     <variables name="_CASH" id="21363"/>
     <variables name="First_Time" id="21423"/>
     <variables name="In_Person_Loyalty" id="21428"/>
+    <variables name="Online_Paypal" id="21461"/>
+    <variables name="Insuff_PayPal" id="21484"/>
+    <variables name="On_Cred" id="21510"/>
   </ucmspec>
   <grlspec>
     <intElements xsi:type="fm:Feature" name="Car Rental" id="13" linksDest="30 35 71 154 129 166 168 343" type="Task" refs="14"/>
     <intElements xsi:type="fm:Feature" name="Available Car Search" fromLinks="//@urnLinks.1" id="15" linksDest="64 65 97 360" linksSrc="71 262" type="Task" decompositionType="Or" refs="16 260">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20171103-151930576"/>
+      <metadata name="_autoSelected" value="20171103-162109162"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Customer Verification" fromLinks="//@urnLinks.0" id="17" linksDest="297 298" linksSrc="30 551" type="Task" fillColor="255,255,255" filled="true" refs="18 550">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20171103-151930576"/>
+      <metadata name="_autoSelected" value="20171103-162109162"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Car Database" id="19" linksDest="301 302 303 502" linksSrc="166" type="Task" refs="20">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20171103-151930576"/>
+      <metadata name="_autoSelected" value="20171103-162109162"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Online Reservation" id="25" linksDest="20553" linksSrc="35 211" type="Task" refs="26 207" selectable="true">
       <metadata name="_addAggregate" value="disable"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Add new vehicle" id="40" linksSrc="303 533" type="Task" refs="41 527">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20171103-151930576"/>
+      <metadata name="_autoSelected" value="20171103-162109162"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Remove vehicle" id="42" linksSrc="302 531" type="Task" refs="43 526">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20171103-151930576"/>
+      <metadata name="_autoSelected" value="20171103-162109162"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Available Cars by category" id="56" linksSrc="64 282" type="Task" refs="57 257">
       <metadata name="_addAggregate" value="disable"/>
@@ -72,11 +113,11 @@
     </intElements>
     <intElements xsi:type="fm:Feature" name="Credit Check" fromLinks="//@urnLinks.7" id="77" linksSrc="298" type="Task" refs="78">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20171103-151930576"/>
+      <metadata name="_autoSelected" value="20171103-162109162"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Driver's License check" id="79" linksDest="180" linksSrc="297" type="Task" refs="80">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20171103-151930576"/>
+      <metadata name="_autoSelected" value="20171103-162109162"/>
       <metadata name="_userSetEvaluationWarning" value="100 != 0"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Debit/Credit payment" id="86" linksSrc="242 245 20828" type="Task" refs="87 20825" selectable="true">
@@ -87,7 +128,7 @@
     </intElements>
     <intElements xsi:type="fm:Feature" name="Payment" id="99" linksDest="125 20980" linksSrc="129" type="Task" decompositionType="Or" refs="100">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20171103-151930576"/>
+      <metadata name="_autoSelected" value="20171103-162109162"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Online Advance Payment" fromLinks="//@urnLinks.6" id="101" linksDest="121 124" linksSrc="276 335 20980" type="Task" decompositionType="Or" refs="102 240" selectable="true">
       <metadata name="_addAggregate" value="disable"/>
@@ -96,25 +137,25 @@
       <metadata name="_addAggregate" value="disable"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Financial Transaction" id="23" linksDest="246 245" type="Task" decompositionType="Xor"/>
-    <intElements xsi:type="fm:Feature" name="PayPal" id="112" linksSrc="124" type="Task" refs="113 20993" selectable="true"/>
-    <intElements xsi:type="fm:Feature" name="Credit Card Payment" id="116" linksSrc="121" type="Task" refs="117 20994" selectable="true"/>
+    <intElements xsi:type="fm:Feature" name="PayPal" fromLinks="//@urnLinks.9" id="112" linksSrc="124" type="Task" refs="113 20993" selectable="true"/>
+    <intElements xsi:type="fm:Feature" name="Credit Card Payment" fromLinks="//@urnLinks.10" id="116" linksSrc="121" type="Task" refs="117 20994" selectable="true"/>
     <intElements xsi:type="fm:Feature" name="Update Vehicle Availability Status" id="140" linksSrc="301 541" type="Task" refs="141 529">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20171103-151930576"/>
+      <metadata name="_autoSelected" value="20171103-162109162"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Insurance Option" fromLinks="//@urnLinks.4" id="146" linksDest="156" linksSrc="154 333" type="Task" refs="147 202">
       <metadata name="_addAggregate" value="disable"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Select Insurance Plan" id="148" linksSrc="156" type="Task" refs="149">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20171103-151930576"/>
+      <metadata name="_autoSelected" value="20171103-162109162"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Loyalty Discount" fromLinks="//@urnLinks.2" id="160" linksDest="174" linksSrc="168 216" type="Task" refs="161 214">
       <metadata name="_addAggregate" value="disable"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Apply Discount Code" id="170" linksSrc="174" type="Task" refs="171">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20171103-151930576"/>
+      <metadata name="_autoSelected" value="20171103-162109162"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Under 21 Fee" id="176" linksSrc="180" type="Task" refs="177">
       <metadata name="_addAggregate" value="disable"/>
@@ -177,7 +218,7 @@
     <intElements name="Retain Customers" id="492" linksDest="556" linksSrc="496" type="Goal" refs="493"/>
     <intElements xsi:type="fm:Feature" name="Check vehicle status" id="498" linksSrc="502 542" type="Task" refs="499 530">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20171103-151930576"/>
+      <metadata name="_autoSelected" value="20171103-162109162"/>
     </intElements>
     <intElements name="Constantly upgrade fleet with latest models" id="511" linksDest="533 20951" linksSrc="536" refs="512">
       <metadata name="_addAggregate" value="disable"/>
@@ -187,11 +228,11 @@
     </intElements>
     <intElements xsi:type="fm:Feature" name="Flexible drop-off option" id="1239" linksSrc="1243" type="Task" refs="1240">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20171103-151930576"/>
+      <metadata name="_autoSelected" value="20171103-162109162"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Online Login" id="20549" linksSrc="20553" type="Task" refs="20550">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20171103-151930576"/>
+      <metadata name="_autoSelected" value="20171103-162109162"/>
     </intElements>
     <intElements name="Physically look for cars in parking lot" id="20937" linksSrc="20941 20942" type="Task" refs="20938">
       <metadata name="_addAggregate" value="disable"/>
@@ -870,7 +911,7 @@
       <connections xsi:type="grl:LinkRef" source="87" target="24" link="242"/>
     </specDiagrams>
     <specDiagrams xsi:type="ucm.map:UCMmap" name="Renting a car" id="753">
-      <nodes xsi:type="ucm.map:StartPoint" name="Begin rental process" id="754" x="153" y="426" succ="//@urndef/@specDiagrams.2/@connections.0" scenarioStartPoints="//@ucmspec/@scenarioGroups.0/@scenarios.0/@startPoints.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Begin rental process" id="754" x="153" y="426" succ="//@urndef/@specDiagrams.2/@connections.0" scenarioStartPoints="//@ucmspec/@scenarioGroups.0/@scenarios.0/@startPoints.0 //@ucmspec/@scenarioGroups.0/@scenarios.1/@startPoints.0 //@ucmspec/@scenarioGroups.0/@scenarios.2/@startPoints.0">
         <label/>
         <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
       </nodes>
@@ -1053,7 +1094,7 @@
       <connections xsi:type="ucm.map:NodeConnection" source="20678" target="20674"/>
       <connections xsi:type="ucm.map:NodeConnection" source="20679" target="20644"/>
       <connections xsi:type="ucm.map:NodeConnection" source="20692" target="20719">
-        <condition deltaX="10" deltaY="26" label="In-Person" expression="!In_Person_Loyalty" description=""/>
+        <condition deltaX="18" deltaY="30" label="In-Person" expression="!In_Person_Loyalty" description=""/>
       </connections>
       <connections xsi:type="ucm.map:NodeConnection" source="20692" target="20715">
         <condition deltaX="-12" deltaY="69" label="Online" expression="In_Person_Loyalty" description=""/>
@@ -1531,6 +1572,12 @@
       </nodes>
       <nodes xsi:type="ucm.map:Stub" name="Credit Card Payment" id="20654" x="484" y="341" succ="//@urndef/@specDiagrams.13/@connections.8 //@urndef/@specDiagrams.13/@connections.10" pred="//@urndef/@specDiagrams.13/@connections.4">
         <label/>
+        <bindings plugin="21492">
+          <in startPoint="21501" stubEntry="//@urndef/@specDiagrams.13/@connections.4"/>
+          <out endPoint="21504" stubExit="//@urndef/@specDiagrams.13/@connections.8"/>
+          <out endPoint="21503" stubExit="//@urndef/@specDiagrams.13/@connections.10"/>
+          <precondition label="" expression="true"/>
+        </bindings>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow20480" id="20653" x="373" y="337" succ="//@urndef/@specDiagrams.13/@connections.4" pred="//@urndef/@specDiagrams.13/@connections.0"/>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow20441" id="20647" x="643" y="168" succ="//@urndef/@specDiagrams.13/@connections.12" pred="//@urndef/@specDiagrams.13/@connections.5"/>
@@ -1538,6 +1585,12 @@
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow20484" id="20658" x="480" y="480" succ="//@urndef/@specDiagrams.13/@connections.7" pred="//@urndef/@specDiagrams.13/@connections.10"/>
       <nodes xsi:type="ucm.map:Stub" name="PayPal Payment" id="20648" x="470" y="136" succ="//@urndef/@specDiagrams.13/@connections.5 //@urndef/@specDiagrams.13/@connections.13" pred="//@urndef/@specDiagrams.13/@connections.6">
         <label deltaX="58" deltaY="-2"/>
+        <bindings plugin="21472">
+          <in startPoint="21475" stubEntry="//@urndef/@specDiagrams.13/@connections.6"/>
+          <out endPoint="21478" stubExit="//@urndef/@specDiagrams.13/@connections.5"/>
+          <out endPoint="21477" stubExit="//@urndef/@specDiagrams.13/@connections.13"/>
+          <precondition label="" expression="true"/>
+        </bindings>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow20437" id="20651" x="188" y="355" succ="//@urndef/@specDiagrams.13/@connections.2" pred="//@urndef/@specDiagrams.13/@connections.3"/>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow20440" id="20649" x="356" y="170" succ="//@urndef/@specDiagrams.13/@connections.6" pred="//@urndef/@specDiagrams.13/@connections.9"/>
@@ -1554,25 +1607,77 @@
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow20770" id="20770" x="448" y="65" succ="//@urndef/@specDiagrams.13/@connections.14" pred="//@urndef/@specDiagrams.13/@connections.13"/>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow20771" id="20771" x="811" y="366" succ="//@urndef/@specDiagrams.13/@connections.15" pred="//@urndef/@specDiagrams.13/@connections.1"/>
       <connections xsi:type="ucm.map:NodeConnection" source="20650" target="20653">
-        <condition deltaX="21" deltaY="-7" label="Credit Card chosen" expression="true" description=""/>
+        <condition deltaX="21" deltaY="-7" label="Credit Card chosen" expression="!Online_Paypal" description=""/>
       </connections>
       <connections xsi:type="ucm.map:NodeConnection" source="20656" target="20771"/>
       <connections xsi:type="ucm.map:NodeConnection" source="20651" target="20650"/>
       <connections xsi:type="ucm.map:NodeConnection" source="20652" target="20651"/>
-      <connections xsi:type="ucm.map:NodeConnection" source="20653" target="20654"/>
-      <connections xsi:type="ucm.map:NodeConnection" source="20648" target="20647"/>
-      <connections xsi:type="ucm.map:NodeConnection" source="20649" target="20648"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="20653" target="20654" inBindings="//@urndef/@specDiagrams.13/@nodes.2/@bindings.0/@in.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="20648" target="20647" outBindings="//@urndef/@specDiagrams.13/@nodes.7/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="20649" target="20648" inBindings="//@urndef/@specDiagrams.13/@nodes.7/@bindings.0/@in.0"/>
       <connections xsi:type="ucm.map:NodeConnection" source="20658" target="20659"/>
-      <connections xsi:type="ucm.map:NodeConnection" source="20654" target="20655"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="20654" target="20655" outBindings="//@urndef/@specDiagrams.13/@nodes.2/@bindings.0/@out.0"/>
       <connections xsi:type="ucm.map:NodeConnection" source="20650" target="20649">
-        <condition deltaX="-7" deltaY="22" label="PayPal chosen" expression="true" description=""/>
+        <condition deltaX="-7" deltaY="22" label="PayPal chosen" expression="Online_Paypal" description=""/>
       </connections>
-      <connections xsi:type="ucm.map:NodeConnection" source="20654" target="20658"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="20654" target="20658" outBindings="//@urndef/@specDiagrams.13/@nodes.2/@bindings.0/@out.1"/>
       <connections xsi:type="ucm.map:NodeConnection" source="20655" target="20656"/>
       <connections xsi:type="ucm.map:NodeConnection" source="20647" target="20656"/>
-      <connections xsi:type="ucm.map:NodeConnection" source="20648" target="20770"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="20648" target="20770" outBindings="//@urndef/@specDiagrams.13/@nodes.7/@bindings.0/@out.1"/>
       <connections xsi:type="ucm.map:NodeConnection" source="20770" target="20662"/>
       <connections xsi:type="ucm.map:NodeConnection" source="20771" target="20657"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Online Credit Card" toLinks="//@urnLinks.10" id="21492" parentStub="//@urndef/@specDiagrams.13/@nodes.2/@bindings.0">
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow21066" id="21499" x="556" y="433" succ="//@urndef/@specDiagrams.14/@connections.2" pred="//@urndef/@specDiagrams.14/@connections.4"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow21070" id="21502" x="554" y="573" succ="//@urndef/@specDiagrams.14/@connections.0" pred="//@urndef/@specDiagrams.14/@connections.1"/>
+      <nodes xsi:type="ucm.map:EndPoint" name="Credit Card Declined" id="21503" x="739" y="570" pred="//@urndef/@specDiagrams.14/@connections.0" outBindings="//@urndef/@specDiagrams.13/@nodes.2/@bindings.0/@out.1">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Credit Card Accepted" id="21504" x="729" y="432" pred="//@urndef/@specDiagrams.14/@connections.2" outBindings="//@urndef/@specDiagrams.13/@nodes.2/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork21016" id="21500" x="457" y="527" succ="//@urndef/@specDiagrams.14/@connections.4 //@urndef/@specDiagrams.14/@connections.1" pred="//@urndef/@specDiagrams.14/@connections.3"/>
+      <nodes xsi:type="ucm.map:StartPoint" name="Process Credit Card Online" id="21501" x="254" y="535" succ="//@urndef/@specDiagrams.14/@connections.3" inBindings="//@urndef/@specDiagrams.13/@nodes.2/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="21502" target="21503"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="21500" target="21502">
+        <condition deltaX="-11" deltaY="19" label="" expression="!On_Cred" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="21499" target="21504"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="21501" target="21500"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="21500" target="21499">
+        <condition label="" expression="On_Cred" description=""/>
+      </connections>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Paypal" toLinks="//@urnLinks.9" id="21472" parentStub="//@urndef/@specDiagrams.13/@nodes.7/@bindings.0">
+      <nodes xsi:type="ucm.map:EndPoint" name="Paypal Payment Processed" id="21478" x="641" y="341" pred="//@urndef/@specDiagrams.15/@connections.1" outBindings="//@urndef/@specDiagrams.13/@nodes.7/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Paypal Payment Rejected" id="21477" x="651" y="479" pred="//@urndef/@specDiagrams.15/@connections.4" outBindings="//@urndef/@specDiagrams.13/@nodes.7/@bindings.0/@out.1">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork21016" id="21474" x="369" y="436" succ="//@urndef/@specDiagrams.15/@connections.0 //@urndef/@specDiagrams.15/@connections.3" pred="//@urndef/@specDiagrams.15/@connections.2"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow21066" id="21473" x="468" y="342" succ="//@urndef/@specDiagrams.15/@connections.1" pred="//@urndef/@specDiagrams.15/@connections.0"/>
+      <nodes xsi:type="ucm.map:StartPoint" name="Process Paypal Payment" id="21475" x="166" y="444" succ="//@urndef/@specDiagrams.15/@connections.2" inBindings="//@urndef/@specDiagrams.13/@nodes.7/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow21070" id="21476" x="466" y="482" succ="//@urndef/@specDiagrams.15/@connections.4" pred="//@urndef/@specDiagrams.15/@connections.3"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="21474" target="21473">
+        <condition label="" expression="!Insuff_PayPal" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="21473" target="21478"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="21475" target="21474"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="21474" target="21476">
+        <condition deltaX="-11" deltaY="19" label="" expression="Insuff_PayPal" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="21476" target="21477"/>
     </specDiagrams>
     <components name="Customer" id="20999" contRefs="21000" kind="Actor"/>
   </urndef>
@@ -1585,6 +1690,8 @@
   <urnLinks type="Online Advance Payment Process" fromElem="101" toElem="20612"/>
   <urnLinks type="Credit Check" fromElem="77" toElem="21110"/>
   <urnLinks type="License Check" fromElem="80" toElem="21003"/>
+  <urnLinks type="Paypal" fromElem="112" toElem="21472"/>
+  <urnLinks type="Online Credit Card" fromElem="116" toElem="21492"/>
   <metadata name="_Use0to100EvaluationRange" value="false"/>
   <metadata name="UrnLinkType" value="Customer Verification"/>
   <metadata name="UrnLinkType" value="Car Search Options"/>
@@ -1595,4 +1702,6 @@
   <metadata name="UrnLinkType" value="Online Advance Payment Process"/>
   <metadata name="UrnLinkType" value="Credit Check"/>
   <metadata name="UrnLinkType" value="License Check"/>
+  <metadata name="UrnLinkType" value="Paypal"/>
+  <metadata name="UrnLinkType" value="Online Credit Card"/>
 </urn:URNspec>
